@@ -5,13 +5,97 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>21-5</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>Hej</h1>
-    <script src=""></script>
+    <nav>
+        <a href="om.html">Om 21-5</a>
+        <a href="foreninger.html">Foreninger</a>
+        <a href="destinationer.html">Destinationer</a>
+        <a href="kontakt.html">Kontakt</a>
+
+    </nav>
+
+    <div id="kontakt_pop">
+        <p id="kontakt_pop_tekst"><br>Har du yderligere spørgsmål eller er du interesseret i at købe dig ind i en forening, så tøv ikke med at kontakte os</p>
+    </div>
+
+    <section id="splash">
+        <div class="wrap sort">
+            <div class="splashbilleder splash1 fade">
+
+            </div>
+            <div class="splashbilleder splash2 fade">
+
+            </div>
+            <div class="splashbilleder splash3 fade">
+
+            </div>
+            <div class="splashbilleder splash4 fade">
+
+
+            </div>
+        </div>
+    </section>
+
+    <p class="tekst1"></p>
+    <div class="video_forside"></div>
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/8";
+        var slideIndex = 0;
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            showSlides();
+            hentData();
+
+        }
+
+        async function hentData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            const json = await response.json();
+            visPage(json);
+
+
+        }
+
+        function visPage(page) {
+
+            console.log(page);
+            document.querySelector(".tekst1").innerHTML = page.content.rendered;
+
+        }
+
+        function showSlides() {
+            var i;
+
+            var slides = document.getElementsByClassName("splashbilleder");
+            console.log('slides', slides);
+
+
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            console.log('slideIndex', slideIndex);
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+    </script>
 </body>
 
 </html>
