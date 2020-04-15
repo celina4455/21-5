@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="da">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreninger</title>
+    <title>Åbne foreninger</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
-
     <style>
         /***** MENU *****/
         nav {
@@ -61,11 +59,12 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
     </style>
 </head>
 
 <body>
-    <nav>
+      <nav>
         <div class="dropdown">
             <a href="om.html">Om 21-5</a>
             <div class="dropdown-content">
@@ -111,43 +110,8 @@
     </nav>
 
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
-
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/102";
-
-        function start() {
-            loadData();
-        }
-
-        async function loadData() {
-            const response = await fetch(endpoint);
-            console.log(response);
-            const json = await response.json();
-            visPage(json);
-        }
-
-         function visPage(page) {
-            console.log(page);
-            document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
-        }
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
-
-
-</body></html>
+</body>
+</html>

@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreninger</title>
+    <title>3 typer foreninger</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
-
     <style>
         /***** MENU *****/
         nav {
@@ -61,6 +60,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
     </style>
 </head>
 
@@ -110,44 +110,47 @@
         </div>
     </nav>
 
+    <div class="big_title"></div>
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
+
+    <div class="tekst_family"></div>
+    <div class="formular_family"></div>
+
+    <div class="tekst_large"></div>
+    <div class="formular_large"></div>
+
+    <div class="tekst_grande"></div>
+    <div class="formular_grande"></div>
+
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
+        window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/102";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/108";
 
-        function start() {
-            loadData();
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData();
         }
 
-        async function loadData() {
+        async function hentData() {
             const response = await fetch(endpoint);
             console.log(response);
             const json = await response.json();
             visPage(json);
         }
 
-         function visPage(page) {
+        function visPage(page) {
             console.log(page);
-            document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
+            document.querySelector(".tekst_family").textContent = page.title.rendered;
         }
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 
 
-</body></html>
+
+
+
+</body>
+
+</html>
