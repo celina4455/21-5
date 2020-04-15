@@ -62,10 +62,10 @@
         }
 
 
-
-        /******** OM FORENINGERNE *********/
-        .tekst_family {
-            margin-bottom: 30px;
+        /******** TEKST STYLING ********/
+        p {
+            font-family: 'Lato';
+            margin-top: 60px;
         }
 
     </style>
@@ -120,13 +120,13 @@
     <div class="big_title"></div>
 
 
-    <div class="tekst_family"></div>
+    <p class="tekst_family"></p>
     <div class="formular_family"></div>
 
-    <div class="tekst_large"></div>
+    <p class="tekst_large"></p>
     <div class="formular_large"></div>
 
-    <div class="tekst_grande"></div>
+    <p class="tekst_grande"></p>
     <div class="formular_grande"></div>
 
 
@@ -189,13 +189,10 @@
             console.log(page);
             document.querySelector(".tekst_grande").innerHTML = page.content.rendered;
         }
-
     </script>
 
 
 
 
 
-</body>
-
-</html>
+</body></html>
