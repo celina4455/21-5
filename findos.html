@@ -60,40 +60,21 @@
 
     </nav>
 
-    <div id="kontakt_pop">
-        <p id="kontakt_pop_tekst"><br>Har du yderligere spørgsmål eller er du interesseret i at købe dig ind i en forening, så tøv ikke med at kontakte os</p>
-    </div>
 
-    <section id="splash">
-        <div class="wrap sort">
-            <div class="splashbilleder splash1 fade">
-
-            </div>
-            <div class="splashbilleder splash2 fade">
-
-            </div>
-            <div class="splashbilleder splash3 fade">
-
-            </div>
-            <div class="splashbilleder splash4 fade">
-
-
-            </div>
-        </div>
-    </section>
 
     <p class="tekst1"></p>
-    <div class="video_forside"></div>
+
 
     <script>
         window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/8";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/16";
+
+
         var slideIndex = 0;
 
         function sidenVises() {
             console.log("Siden Vises");
-            showSlides();
             hentData();
 
         }
@@ -112,28 +93,6 @@
             console.log(page);
             document.querySelector(".tekst1").innerHTML = page.content.rendered;
 
-        }
-
-        function showSlides() {
-            var i;
-
-            var slides = document.getElementsByClassName("splashbilleder");
-            console.log('slides', slides);
-
-
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            console.log('slideIndex', slideIndex);
-
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
         }
 
     </script>
