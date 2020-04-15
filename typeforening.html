@@ -61,6 +61,13 @@
             display: block;
         }
 
+
+
+        /******** OM FORENINGERNE *********/
+        .tekst_family {
+            margin-bottom: 30px;
+        }
+
     </style>
 </head>
 
@@ -126,23 +133,61 @@
     <script>
         window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/108";
+        const endpoint1 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/116";
+        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/119";
+        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/126";
 
         function sidenVises() {
             console.log("Siden Vises");
-            hentData();
+            hentData1();
         }
 
-        async function hentData() {
-            const response = await fetch(endpoint);
+        /************ TEKSTAFSNIT OM FAMILY FORENING ************/
+        async function hentData1() {
+            const response = await fetch(endpoint1);
             console.log(response);
             const json = await response.json();
-            visPage(json);
+            visPage1(json);
         }
 
-        function visPage(page) {
+        function visPage1(page) {
             console.log(page);
-            document.querySelector(".tekst_family").textContent = page.title.rendered;
+            document.querySelector(".tekst_family").innerHTML = page.content.rendered;
+            hentData2();
+        }
+
+
+
+
+
+        /************ TEKSTAFSNIT OM LAGRGE FORENING ************/
+        async function hentData2() {
+            const response = await fetch(endpoint2);
+            console.log(response);
+            const json = await response.json();
+            visPage2(json);
+        }
+
+        function visPage2(page) {
+            console.log(page);
+            document.querySelector(".tekst_large").innerHTML = page.content.rendered;
+            hentData3();
+        }
+
+
+
+
+        /************ TEKSTAFSNIT OM GRANDE FORENING ************/
+        async function hentData3() {
+            const response = await fetch(endpoint3);
+            console.log(response);
+            const json = await response.json();
+            visPage3(json);
+        }
+
+        function visPage3(page) {
+            console.log(page);
+            document.querySelector(".tekst_grande").innerHTML = page.content.rendered;
         }
 
     </script>
