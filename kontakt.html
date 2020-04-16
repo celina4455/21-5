@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21-5</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <div class="dropdown">
+            <a href="om.html">Om 21-5</a>
+            <div class="dropdown-content">
+                <a href="#">Økonomi, jura og skat</a>
+                <a href="#">Historien</a>
+                <a href="#">Job i 21-5 teamet</a>
+                <a href="#">Ofte stillede spørgsmål</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="foreninger.html">Foreninger</a>
+            <div class="dropdown-content">
+                <a href="#">3 typer ejerforeninger </a>
+                <a href="#">Åbne foreninger</a>
+                <a href="#">Stiftede 21-5 foreninger</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="destinationer.html">Destinationer</a>
+            <div class="dropdown-content">
+                <a href="#">Mallorca </a>
+                <a href="#">Toscana</a>
+                <a href="#">Sydfrankrig</a>
+                <a href="#">Chamonix </a>
+                <a href="#">New York</a>
+                <a href="#">Barcelona</a>
+                <a href="#">Paris</a>
+                <a href="#">Rom</a>
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="kontakt.html">Kontakt</a>
+            <div class="dropdown-content">
+
+                <a href="kaffe.html">Book et kaffemøde</a>
+                <a href="orientering.html">Kom med til orienteringsmøde</a>
+            </div>
+        </div>
+
+
+
+
+    </nav>
+
+
+
+    <p class="tekst1"></p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.944174221179!2d12.507049315868226!3d55.88098298956612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465248558cfb6eed%3A0xfb954abdb40256ad!2sRungstedvej%2041%2C%202970%20H%C3%B8rsholm!5e0!3m2!1sda!2sdk!4v1587031890920!5m2!1sda!2sdk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/16";
+
+
+        var slideIndex = 0;
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData();
+
+        }
+
+        async function hentData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            const json = await response.json();
+            visPage(json);
+
+
+        }
+
+        function visPage(page) {
+
+            console.log(page);
+            document.querySelector(".tekst1").innerHTML = page.content.rendered;
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -61,6 +61,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
     </style>
 </head>
 
@@ -103,7 +104,7 @@
         <div class="dropdown">
             <a href="kontakt.html">Kontakt</a>
             <div class="dropdown-content">
-                <a href="#">Her kan du finde os </a>
+
                 <a href="#">Book et kaffemøde</a>
                 <a href="#">Kom med til orienteringsmøde</a>
             </div>
@@ -130,24 +131,15 @@
             visPage(json);
         }
 
-         function visPage(page) {
+        function visPage(page) {
             console.log(page);
             document.querySelector(".title").textContent = page.title.rendered;
             document.querySelector(".content").innerHTML = page.content.rendered;
         }
 
-
-
-
-
-
-
-
-
-
-
-
     </script>
 
 
-</body></html>
+</body>
+
+</html>
