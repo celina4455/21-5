@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="da">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreninger</title>
+    <title>Stiftede foreninger</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
-
     <style>
         /***** MENU *****/
         nav {
@@ -62,21 +60,18 @@
             display: block;
         }
 
-<<<<<<< HEAD
-=======
 
 
-        h1, p {
+
+        p {
             font-family: 'Lato';
         }
 
-
->>>>>>> origin/master
     </style>
 </head>
 
 <body>
-    <nav>
+      <nav>
         <div class="dropdown">
             <a href="om.html">Om 21-5</a>
             <div class="dropdown-content">
@@ -114,7 +109,7 @@
         <div class="dropdown">
             <a href="kontakt.html">Kontakt</a>
             <div class="dropdown-content">
-
+                <a href="#">Her kan du finde os </a>
                 <a href="#">Book et kaffemøde</a>
                 <a href="#">Kom med til orienteringsmøde</a>
             </div>
@@ -122,19 +117,21 @@
     </nav>
 
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
+    <p class="stiftet_text"></p>
+
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
+        window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/102";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/112";
 
-        function start() {
-            loadData();
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData();
         }
 
-        async function loadData() {
+
+        async function hentData() {
             const response = await fetch(endpoint);
             console.log(response);
             const json = await response.json();
@@ -143,13 +140,13 @@
 
         function visPage(page) {
             console.log(page);
-            document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
+            document.querySelector(".stiftet_text").innerHTML = page.content.rendered;
         }
 
+
+
+
+
     </script>
-
-
 </body>
-
 </html>

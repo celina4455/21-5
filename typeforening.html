@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreninger</title>
+    <title>3 typer foreninger</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
-
     <style>
         /***** MENU *****/
         nav {
@@ -62,16 +61,13 @@
             display: block;
         }
 
-<<<<<<< HEAD
-=======
 
-
-        h1, p {
+        /******** TEKST STYLING ********/
+        p {
             font-family: 'Lato';
+            margin-top: 60px;
         }
 
-
->>>>>>> origin/master
     </style>
 </head>
 
@@ -114,42 +110,89 @@
         <div class="dropdown">
             <a href="kontakt.html">Kontakt</a>
             <div class="dropdown-content">
-
+                <a href="#">Her kan du finde os </a>
                 <a href="#">Book et kaffemøde</a>
                 <a href="#">Kom med til orienteringsmøde</a>
             </div>
         </div>
     </nav>
 
+    <div class="big_title"></div>
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
+
+    <p class="tekst_family"></p>
+    <div class="formular_family"></div>
+
+    <p class="tekst_large"></p>
+    <div class="formular_large"></div>
+
+    <p class="tekst_grande"></p>
+    <div class="formular_grande"></div>
+
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
+        window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/102";
+        const endpoint1 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/116";
+        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/119";
+        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/126";
 
-        function start() {
-            loadData();
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData1();
         }
 
-        async function loadData() {
-            const response = await fetch(endpoint);
+        /************ TEKSTAFSNIT OM FAMILY FORENING ************/
+        async function hentData1() {
+            const response = await fetch(endpoint1);
             console.log(response);
             const json = await response.json();
-            visPage(json);
+            visPage1(json);
         }
 
-        function visPage(page) {
+        function visPage1(page) {
             console.log(page);
-            document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
+            document.querySelector(".tekst_family").innerHTML = page.content.rendered;
+            hentData2();
         }
 
+
+
+
+
+        /************ TEKSTAFSNIT OM LAGRGE FORENING ************/
+        async function hentData2() {
+            const response = await fetch(endpoint2);
+            console.log(response);
+            const json = await response.json();
+            visPage2(json);
+        }
+
+        function visPage2(page) {
+            console.log(page);
+            document.querySelector(".tekst_large").innerHTML = page.content.rendered;
+            hentData3();
+        }
+
+
+
+
+        /************ TEKSTAFSNIT OM GRANDE FORENING ************/
+        async function hentData3() {
+            const response = await fetch(endpoint3);
+            console.log(response);
+            const json = await response.json();
+            visPage3(json);
+        }
+
+        function visPage3(page) {
+            console.log(page);
+            document.querySelector(".tekst_grande").innerHTML = page.content.rendered;
+        }
     </script>
 
 
-</body>
 
-</html>
+
+
+</body></html>

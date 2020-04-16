@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="da">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreninger</title>
+    <title>Åbne foreninger</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
-
     <style>
         /***** MENU *****/
         nav {
@@ -62,21 +60,18 @@
             display: block;
         }
 
-<<<<<<< HEAD
-=======
 
 
-        h1, p {
+        /******** TEKST STYLING ********/
+        p {
             font-family: 'Lato';
         }
 
-
->>>>>>> origin/master
     </style>
 </head>
 
 <body>
-    <nav>
+      <nav>
         <div class="dropdown">
             <a href="om.html">Om 21-5</a>
             <div class="dropdown-content">
@@ -114,7 +109,7 @@
         <div class="dropdown">
             <a href="kontakt.html">Kontakt</a>
             <div class="dropdown-content">
-
+                <a href="#">Her kan du finde os </a>
                 <a href="#">Book et kaffemøde</a>
                 <a href="#">Kom med til orienteringsmøde</a>
             </div>
@@ -122,34 +117,58 @@
     </nav>
 
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
+
+    <p class="DK21"></p>
+    <p class="DK15"></p>
+
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
+        window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/102";
+        const endpoint_15family = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/129";
+        const endpoint_21large = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/131";
 
-        function start() {
-            loadData();
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData15family();
         }
 
-        async function loadData() {
-            const response = await fetch(endpoint);
+                /************ TEKSTAFSNIT OM DK15 FAMILY ************/
+        async function hentData15family() {
+            const response = await fetch(endpoint_15family);
             console.log(response);
             const json = await response.json();
-            visPage(json);
+            visPage15family(json);
         }
 
-        function visPage(page) {
+        function visPage15family(page) {
             console.log(page);
-            document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
+            document.querySelector(".DK15").innerHTML = page.content.rendered;
+            hentData21large();
         }
+
+                        /************ TEKSTAFSNIT OM DK21 LARGE ************/
+        async function hentData21large() {
+            const response = await fetch(endpoint_21large);
+            console.log(response);
+            const json = await response.json();
+            visPage21large(json);
+        }
+
+        function visPage21large(page) {
+            console.log(page);
+            document.querySelector(".DK21").innerHTML = page.content.rendered;
+        }
+
+
+
 
     </script>
 
 
-</body>
 
+
+
+
+</body>
 </html>
