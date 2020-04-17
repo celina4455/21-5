@@ -61,7 +61,7 @@
     </nav>
 
     <div id="kontakt_pop">
-        <p id="kontakt_pop_tekst"><br>Har du yderligere spørgsmål eller er du interesseret i at købe dig ind i en forening, så tøv ikke med at kontakte os</p>
+        <p id="kontakt_pop_tekst"></p>
     </div>
 
     <section id="splash">
@@ -84,17 +84,25 @@
 
     <p class="tekst1"></p>
     <div class="video_forside"></div>
+    <div class="diagram_forside"></div>
 
     <script>
         window.addEventListener("load", sidenVises);
 
         const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/8";
+
+        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/18/?per_page=100";
+
+        const endpoint4 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/92/?per_page=100";
+
         var slideIndex = 0;
 
         function sidenVises() {
             console.log("Siden Vises");
             showSlides();
             hentData();
+            hentData2();
+            hentData4();
 
         }
 
@@ -107,10 +115,42 @@
 
         }
 
+        async function hentData2() {
+            const response = await fetch(endpoint2);
+            console.log(response);
+            const json = await response.json();
+            visPage2(json);
+
+
+        }
+
+        async function hentData4() {
+            const response = await fetch(endpoint4);
+            console.log(response);
+            const json = await response.json();
+            visPage4(json);
+
+
+        }
+
         function visPage(page) {
 
             console.log(page);
             document.querySelector(".tekst1").innerHTML = page.content.rendered;
+
+        }
+
+        function visPage2(page) {
+
+            console.log(page);
+            document.querySelector("#kontakt_pop_tekst").innerHTML = "<br>" + page.content.rendered;
+
+        }
+
+        function visPage4(page) {
+
+            console.log(page);
+            document.querySelector(".diagram_forside").innerHTML = page.content.rendered;
 
         }
 

@@ -73,6 +73,11 @@ nav a:hover {
     border-radius: 20%;
 }
 
+#kontakt_pop_tekst {
+    z-index: 101;
+    color: black;
+}
+
 
 
 #forside {
