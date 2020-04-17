@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinationer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 1.5vw;
+        }
+
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .skjul {
+            display: none;
+        }
+
+        .destination_mallorca {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_sydspanien {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_toscana {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_sydfrankrig {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_charmonix {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_newyork {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_barcelona {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_paris {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination_rom {
+            cursor: pointer;
+            flex-basis: 23vw;
+            margin: 2.5vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destinationer_liste img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .destinationer_liste {
+            border-radius: 25%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #detalje {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: azure;
+        }
+
+        #detalje button {
+            font-size: 1.5em;
+            padding: 0vw;
+            font-family: 'Martel', serif;
+            top: 0.5vw;
+            left: 2vw;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #detalje img {
+            width: 45%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="destinationer_intro">
+        <h1>Destinationer</h1>
+        <p>Der er så mange fantastiske steder, at det til en start er meget svært at begrænse sig. Der er dog verdensdele, som ved nærmere eftertanke ikke giver så meget mening for de fleste. Vi køber derfor kun boliger på destinationer, som giver mest mening for flertallet af danske familier. <br> <br> Vi har primært valgt destinationer i Europa, indtil videre med New York som eneste undtagelse. Vi holder os væk fra lande med økonomisk og religiøs ustabilitet eller skrøbelighed. Vi kigger også på flyforbindelser samt flyvetid, når vi skal vælge destinationer, det skal være nemt at komme til destinationerne. Boligerne købes i byer og på destinationer, som kan benyttes året rundt, og hvor man ikke løber tør for muligheder for spændende oplevelser i årene fremover.
+            Sammensætningen af destinationerne i vores ejerforeninger dikteres således udelukkende efter, hvor vi har erfaret, at flertallet af danske familier gerne vil eje skønne boliger i udlandet. <br><br>
+            Når en 21-5 ejerforening udbydes, ligger de 5 destinationer fast. Det vil sige, at når I læser et notat over en forening åben for tilgang, som endnu ikke er stiftet, så kan I være sikre på, at I vil blive medejere af 5 boliger på de nævnte destinationer.<br>
+            Vi sammensætter destinationerne ud fra alle de input, vi får i hverdagen - både fra eksisterende ejere i foreningerne - og fra potentielle ejere af fremtidige foreninger.</p>
+    </section>
+
+    <section class="destinationer_liste">
+        <div class="destination_mallorca">
+            <div class=text>
+                <h2>Mallorca</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_sydspanien">
+            <div class=text>
+                <h2>Sydspanien</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_toscana">
+            <div class=text>
+                <h2>Toscana</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_sydfrankrig">
+            <div class=text>
+                <h2>Sydfrankrig</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_charmonix">
+            <div class=text>
+                <h2>Charmonix</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_newyork">
+            <div class=text>
+                <h2>New York</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_barcelona">
+            <div class=text>
+                <h2>Barcelona</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_paris">
+            <div class=text>
+                <h2>Paris</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+        <div class="destination_rom">
+            <div class=text>
+                <h2>Rom</h2>
+            </div>
+            <img src="billeder/mallorca.jpg" alt="hej">
+        </div>
+
+    </section>
+
+
+    <section id="detalje" class="skjul">
+        <button id="luk">X</button>
+        <article id="person">
+            <p class="rom"></p>
+        </article>
+    </section>
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const endpoint1 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/23";
+        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/29";
+        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/37";
+        const endpoint4 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/47";
+        const endpoint5 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/56";
+        const endpoint6 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/64";
+        const endpoint7 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/71";
+        const endpoint8 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/76";
+        const endpoint9 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/98";
+
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            document.querySelector(".destination_mallorca").addEventListener("click", visDetalje)
+            document.querySelector(".destination_sydspanien").addEventListener("click", visDetalje2)
+            document.querySelector(".destination_toscana").addEventListener("click", visDetalje3)
+            document.querySelector(".destination_sydfrankrig").addEventListener("click", visDetalje4)
+            document.querySelector(".destination_charmonix").addEventListener("click", visDetalje5)
+            document.querySelector(".destination_newyork").addEventListener("click", visDetalje6)
+            document.querySelector(".destination_barcelona").addEventListener("click", visDetalje7)
+            document.querySelector(".destination_paris").addEventListener("click", visDetalje8)
+            document.querySelector(".destination_rom").addEventListener("click", visDetalje9)
+        }
+
+        async function hentData1() {
+            const response = await fetch(endpoint1);
+            console.log(response);
+            const json = await response.json();
+            visPage1(json);
+        }
+
+        function visDetalje() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData1();
+            visPage1();
+        }
+
+        function visPage1(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+        async function hentData2() {
+            const response = await fetch(endpoint2);
+            console.log(response);
+            const json = await response.json();
+            visPage2(json);
+        }
+
+        function visDetalje2() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData2();
+            visPage2();
+        }
+
+        function visPage2(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+        async function hentData3() {
+            const response = await fetch(endpoint3);
+            console.log(response);
+            const json = await response.json();
+            visPage3(json);
+        }
+
+        function visDetalje3() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData3();
+            visPage3();
+        }
+
+        function visPage3(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+        async function hentData4() {
+            const response = await fetch(endpoint4);
+            console.log(response);
+            const json = await response.json();
+            visPage4(json);
+        }
+
+        function visDetalje4() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData4();
+            visPage4();
+        }
+
+        function visPage4(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+        async function hentData5() {
+            const response = await fetch(endpoint5);
+            console.log(response);
+            const json = await response.json();
+            visPage5(json);
+        }
+
+        function visDetalje5() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData5();
+            visPage5();
+        }
+
+        function visPage5(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+        async function hentData6() {
+            const response = await fetch(endpoint6);
+            console.log(response);
+            const json = await response.json();
+            visPage6(json);
+        }
+
+        function visDetalje6() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData6();
+            visPage6();
+        }
+
+        function visPage6(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+        async function hentData7() {
+            const response = await fetch(endpoint7);
+            console.log(response);
+            const json = await response.json();
+            visPage7(json);
+        }
+
+        function visDetalje7() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData7();
+            visPage7();
+        }
+
+        function visPage7(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+        async function hentData8() {
+            const response = await fetch(endpoint8);
+            console.log(response);
+            const json = await response.json();
+            visPage8(json);
+        }
+
+        function visDetalje8() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData8();
+            visPage8();
+        }
+
+        function visPage8(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+        async function hentData9() {
+            const response = await fetch(endpoint9);
+            console.log(response);
+            const json = await response.json();
+            visPage9(json);
+        }
+
+        function visDetalje9() {
+            console.log("visDetalje");
+            detalje.classList.remove("skjul");
+            detalje.querySelector("#luk").addEventListener("click", () => {
+                detalje.classList.add("skjul");
+            });
+            hentData9();
+            visPage9();
+        }
+
+        function visPage9(page) {
+            console.log(page);
+            document.querySelector(".rom").innerHTML = page.content.rendered;
+        }
+
+    </script>
+</body>
+
+</html>
