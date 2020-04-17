@@ -9,8 +9,9 @@
         /***** LOGO *****/
         .logo {
             max-width: 100px;
-            margin-right: 21vw;
             margin-top: 1vw;
+            cursor: pointer;
+            z-index: 1000;
         }
 
         /***** MENU *****/
@@ -64,16 +65,18 @@
             display: block;
         }
 
-        h1, p {
+        h1,
+        p {
             font-family: 'Lato';
         }
-
     </style>
 </head>
 
 <body>
-       <nav>
-       <img class="logo" src="billeder/logo_hvid.png" alt="logo">
+    <nav>
+        <a href="forside.html">
+            <img class="logo" src="billeder/logo_hvid.png" alt="logo">
+        </a>
         <div class="dropdown">
             <a href="om.html">Om 21-5</a>
             <div class="dropdown-content">
@@ -116,32 +119,31 @@
         </div>
     </nav>
 
-<h1 class="title"></h1>
-<p class="content"></p>
+    <h1 class="title"></h1>
+    <p class="content"></p>
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", start);
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
 
-    const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/19";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/19";
 
-    function start() {
-        loadData();
-    }
+        function start() {
+            loadData();
+        }
 
-    async function loadData() {
-        const response = await fetch(endpoint);
-        console.log(response);
-        const json = await response.json();
-        visPage(json);
-    }
+        async function loadData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            const json = await response.json();
+            visPage(json);
+        }
 
-    function visPage(page) {
-        console.log(page);
-        document.querySelector(".title").textContent = page.title.rendered;
-        document.querySelector(".content").innerHTML = page.content.rendered;
-    }
-</script>
-</body>
-</html>
+        function visPage(page) {
+            console.log(page);
+            document.querySelector(".title").textContent = page.title.rendered;
+            document.querySelector(".content").innerHTML = page.content.rendered;
+        }
+    </script>
+</body></html>
