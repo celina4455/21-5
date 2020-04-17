@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stiftede foreninger</title>
+    <title>Økonomi, jura og skat</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
     <style>
         /***** MENU *****/
@@ -60,10 +60,7 @@
             display: block;
         }
 
-
-
-
-        p {
+        h1, p {
             font-family: 'Lato';
         }
 
@@ -71,7 +68,7 @@
 </head>
 
 <body>
-      <nav>
+       <nav>
         <div class="dropdown">
             <a href="om.html">Om 21-5</a>
             <div class="dropdown-content">
@@ -108,44 +105,38 @@
         <div class="dropdown">
             <a href="kontakt.html">Kontakt</a>
             <div class="dropdown-content">
-                <a href="#">Her kan du finde os </a>
-                <a href="#">Book et kaffemøde</a>
-                <a href="#">Kom med til orienteringsmøde</a>
+                <a href="kaffe.html">Book et kaffemøde</a>
+                <a href="orientering.html">Kom med til orienteringsmøde</a>
             </div>
         </div>
     </nav>
 
-
-    <p class="stiftet_text"></p>
-
-
-    <script>
-        window.addEventListener("load", sidenVises);
-
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/112";
-
-        function sidenVises() {
-            console.log("Siden Vises");
-            hentData();
-        }
-
-
-        async function hentData() {
-            const response = await fetch(endpoint);
-            console.log(response);
-            const json = await response.json();
-            visPage(json);
-        }
-
-        function visPage(page) {
-            console.log(page);
-            document.querySelector(".stiftet_text").innerHTML = page.content.rendered;
-        }
+<h1 class="title"></h1>
+<p class="content"></p>
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", start);
 
+    const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/19";
 
-    </script>
+    function start() {
+        loadData();
+    }
+
+    async function loadData() {
+        const response = await fetch(endpoint);
+        console.log(response);
+        const json = await response.json();
+        visPage(json);
+    }
+
+    function visPage(page) {
+        console.log(page);
+        document.querySelector(".title").textContent = page.title.rendered;
+        document.querySelector(".content").innerHTML = page.content.rendered;
+    }
+</script>
 </body>
 </html>
