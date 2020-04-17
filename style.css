@@ -2,6 +2,12 @@ body {
     margin: 0;
 }
 
+p {
+    font-family: 'Lato';
+    margin: 3vw;
+}
+
+/****** nav ********/
 nav {
     width: 100%;
     height: 5vw;
@@ -10,13 +16,9 @@ nav {
     padding-top: 5vw;
 
 
-
-
 }
 
-p {
-    font-family: 'Lato';
-}
+
 
 nav a {
     color: #fffefc;
@@ -62,6 +64,70 @@ nav a:hover {
 }
 
 
+.burger_kryds {
+    font-size: 1.7rem;
+    padding-right: 0.1rem;
+    transform: scale(1.4, 1);
+    margin-bottom: 0;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#burger {
+    position: relative;
+    left: 0;
+    width: 70vw;
+    z-index: 102;
+    background-color: #faf7e4;
+
+}
+
+#mylinks {
+    display: none;
+
+}
+
+#menuknap {
+    position: absolute;
+    top: -2.3rem;
+    left: 0.5rem;
+    font-size: 2.3rem;
+    z-index: 100;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    display: flex;
+    font-style: normal;
+
+
+}
+
+@media only screen and (min-width: 1100px) {
+
+    #menuknap,
+    #burger {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .topnav {
+        display: none;
+    }
+
+    .dropdown-content {
+        width: 60vw;
+    }
+
+}
+
+
+
+
+/****** kontakt box ********/
 
 #kontakt_pop {
     width: 15vw;
@@ -69,16 +135,23 @@ nav a:hover {
     position: fixed;
     right: 2vw;
     bottom: 1vw;
-    background-color: blueviolet;
+    background-color: #f4f2e6;
     border-radius: 20%;
+    border: 0.5vw solid #f2d5d5;
 }
 
 #kontakt_pop_tekst {
     z-index: 101;
-    color: black;
+    color: #363636;
+    font-family: 'Lato';
+    width: 80%;
+    text-decoration: none;
+
 }
 
 
+
+/******* forside ******/
 
 #forside {
     width: 100%;
