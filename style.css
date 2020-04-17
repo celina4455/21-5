@@ -8,6 +8,18 @@ p {
 }
 
 /****** nav ********/
+
+.logo {
+    max-width: 100px;
+
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    left: 5vw;
+    top: 1vw;
+
+}
+
 nav {
     width: 100%;
     height: 5vw;
@@ -78,7 +90,7 @@ nav a:hover {
     position: relative;
     left: 0;
     width: 70vw;
-    z-index: 102;
+    z-index: 1002;
     background-color: #faf7e4;
 
 }
@@ -98,6 +110,7 @@ nav a:hover {
     font-weight: 400;
     display: flex;
     font-style: normal;
+    color: white;
 
 
 }
@@ -121,6 +134,22 @@ nav a:hover {
     .dropdown-content {
         width: 60vw;
     }
+
+    .logo {
+        max-width: 12vw;
+
+        cursor: pointer;
+        z-index: 1000;
+        position: absolute;
+        left: 44vw;
+        top: 2vw;
+
+    }
+
+    nav {
+        height: 15vw;
+    }
+
 
 }
 
@@ -242,7 +271,184 @@ nav a:hover {
 }
 
 .video_forside {
+    width: 50vw;
+    margin-left: 23vw;
+}
+
+.diagram_forside {
+    width: 50vw;
+    margin-left: 16vw;
+}
+
+/******* destinationer *******/
+
+.skjul {
+    display: none;
+}
+
+.destinationer_intro {
+    margin: 2.5vw;
+}
+
+.destination_mallorca {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_sydspanien {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_toscana {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_sydfrankrig {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_charmonix {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_newyork {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_barcelona {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_paris {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destination_rom {
+    cursor: pointer;
+    flex-basis: 23vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destinationer_liste img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.destinationer_liste {
+    border-radius: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1.5vw;
+}
+
+#detalje {
+    position: fixed;
+    top: 0;
     width: 100vw;
-    height: 56.25vw;
-    background-color: skyblue;
+    height: 100vh;
+    background-color: azure;
+}
+
+#detalje button {
+    font-size: 1.5em;
+    padding: 0vw;
+    font-family: 'Martel', serif;
+    top: 0.5vw;
+    left: 2vw;
+    position: absolute;
+    cursor: pointer;
+}
+
+#detalje img {
+    width: 45%;
+}
+
+footer {
+    background-color: cadetblue;
+    height: 33vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box1 {
+    width: 25vw;
+    height: 24vw;
+    margin-top: 5vw;
+    background-color: white;
+    border: 2px;
+    border-radius: 20%;
+}
+
+.kontakt {
+    margin: 2vw 2vw 2vw 2vw;
+}
+
+.box2 {
+    width: 25vw;
+    height: 24vw;
+    margin-top: 5vw;
+    background-color: white;
+    border: 2px;
+    border-radius: 20%;
+}
+
+.map {
+    margin: 2vw 2vw 2vw 2vw;
+}
+
+.box3 {
+    width: 25vw;
+    height: 24vw;
+    margin-top: 5vw;
+    background-color: white;
+    border: 2px;
+    border-radius: 20%;
+}
+
+.facebook {
+    margin: 2vw 2vw 2vw 2vw;
 }
