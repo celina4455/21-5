@@ -94,16 +94,17 @@
                         <a href="orientering.html">Kom med til orienteringsmøde</a>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
     </nav>
 
-    <div id="kontakt_pop">
-        <a href="kontakt.html" id="kontakt_pop_tekst"></a>
+
+    <div id="fixed">
+        <div id="kontakt_pop">
+            <!--<img class="bubble" src="billeder/text_bubble.png" alt="bubble">-->
+            <a href="kontakt.html" id="kontakt_pop_tekst"></a>
+        </div>
     </div>
 
     <section id="splash">
@@ -124,7 +125,7 @@
         </div>
     </section>
 
-    <p class="tekst1"></p>
+    <p class="tekst_forside"></p>
     <div class="video_forside"></div>
     <div class="diagram_forside"></div>
     <footer>
@@ -213,7 +214,7 @@
         function visPage(page) {
 
             console.log(page);
-            document.querySelector(".tekst1").innerHTML = page.content.rendered;
+            document.querySelector(".tekst_forside").innerHTML = page.content.rendered;
 
         }
 
@@ -273,8 +274,5 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
