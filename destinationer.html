@@ -110,68 +110,20 @@
     </section>
 
     <section class="destinationer_liste">
-
-        <div class="destination_mallorca destination">
-            <div class="destination_text">
-                <h2>Mallorca</h2>
+        <template id="template">
+            <div class="destination">
+                <div class="destination_text">
+                    <h2></h2>
+                </div>
+                <img src="" alt="hej">
             </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_sydspanien destination">
-            <div class="destination_text">
-                <h2>Sydspanien</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_toscana destination">
-            <div class="destination_text">
-                <h2>Toscana</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_sydfrankrig destination">
-            <div class="destination_text">
-                <h2>Sydfrankrig</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_charmonix destination">
-            <div class="destination_text">
-                <h2>Charmonix</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_newyork destination">
-            <div class="destination_text">
-                <h2>New York</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_barcelona destination">
-            <div class="destination_text">
-                <h2>Barcelona</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_paris destination">
-            <div class="destination_text">
-                <h2>Paris</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-        <div class="destination_rom destination">
-            <div class="destination_text">
-                <h2>Rom</h2>
-            </div>
-            <img src="billeder/mallorca.jpg" alt="hej">
-        </div>
-
+        </template>
     </section>
 
 
     <section id="detalje" class="skjul">
         <button id="luk">X</button>
-        <article id="person">
+        <article id="destination">
             <p class="rom"></p>
         </article>
     </section>
@@ -180,246 +132,62 @@
         <div class="box1">
             <div class="kontakt">
                 <h2>Kontakt os</h2>
+
+                <p class="email">Kontakt os i 21-5,<br> hvis du gerne vil vide mere
+                    <br> <br>
+                    Skriv til info@21-5.dk<br> eller ring på 70 26 11 55</p>
             </div>
         </div>
         <div class="box2">
             <div class="map">
                 <h2>Find os</h2>
-                <p>Rungstedvej 41<br>
-                    2970 Hørsholm</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.944347686991!2d12.507049315918723!3d55.88097998058779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465248558cfb6eed%3A0xfb954abdb40256ad!2sRungstedvej%2041%2C%202970%20H%C3%B8rsholm!5e0!3m2!1sda!2sdk!4v1587115731612!5m2!1sda!2sdk" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <p>Rungstedvej 41 -
+                    2970 Hørsholm<br></p>
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.944347686991!2d12.507049315918723!3d55.88097998058779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465248558cfb6eed%3A0xfb954abdb40256ad!2sRungstedvej%2041%2C%202970%20H%C3%B8rsholm!5e0!3m2!1sda!2sdk!4v1587115731612!5m2!1sda!2sdk" width="300" height="190" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
         <div class="box3">
             <div class="facebook">
                 <h2>Følg os</h2>
+                <img src="billeder/insta.jpg" alt="hej">
+
             </div>
         </div>
     </footer>
 
 
     <script>
-        window.addEventListener("load", sidenVises);
+        let destinationer = [];
+        const liste = document.querySelector(".destinationer_liste");
+        const skabelon = document.querySelector("template");
 
-        const endpoint1 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/23";
-        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/29";
-        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/37";
-        const endpoint4 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/47";
-        const endpoint5 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/56";
-        const endpoint6 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/64";
-        const endpoint7 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/71";
-        const endpoint8 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/76";
-        const endpoint9 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/98";
+        document.addEventListener("DOMContentLoaded", start);
 
-
-        function sidenVises() {
-            console.log("Siden Vises");
-            document.querySelector("#menuknap").addEventListener("touched", menuOpenClose);
+        function start() {
+            getJson();
             document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
-            document.querySelector(".destination_mallorca").addEventListener("click", visDetalje)
-            document.querySelector(".destination_sydspanien").addEventListener("click", visDetalje2)
-            document.querySelector(".destination_toscana").addEventListener("click", visDetalje3)
-            document.querySelector(".destination_sydfrankrig").addEventListener("click", visDetalje4)
-            document.querySelector(".destination_charmonix").addEventListener("click", visDetalje5)
-            document.querySelector(".destination_newyork").addEventListener("click", visDetalje6)
-            document.querySelector(".destination_barcelona").addEventListener("click", visDetalje7)
-            document.querySelector(".destination_paris").addEventListener("click", visDetalje8)
-            document.querySelector(".destination_rom").addEventListener("click", visDetalje9)
         }
 
-        async function hentData1() {
-            const response = await fetch(endpoint1);
-            console.log(response);
-            const json = await response.json();
-            visPage1(json);
+        async function getJson() {
+            const url = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/destinationer";
+            let response = await fetch(url);
+            destinationer = await response.json();
+            visDestinationer();
+
         }
 
-        function visDetalje() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData1();
-            visPage1();
-        }
-
-        function visPage1(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-
-        async function hentData2() {
-            const response = await fetch(endpoint2);
-            console.log(response);
-            const json = await response.json();
-            visPage2(json);
-        }
-
-        function visDetalje2() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData2();
-            visPage2();
-        }
-
-        function visPage2(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-
-        async function hentData3() {
-            const response = await fetch(endpoint3);
-            console.log(response);
-            const json = await response.json();
-            visPage3(json);
-        }
-
-        function visDetalje3() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData3();
-            visPage3();
-        }
-
-        function visPage3(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-
-        async function hentData4() {
-            const response = await fetch(endpoint4);
-            console.log(response);
-            const json = await response.json();
-            visPage4(json);
-        }
-
-        function visDetalje4() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData4();
-            visPage4();
-        }
-
-        function visPage4(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-
-        async function hentData5() {
-            const response = await fetch(endpoint5);
-            console.log(response);
-            const json = await response.json();
-            visPage5(json);
-        }
-
-        function visDetalje5() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData5();
-            visPage5();
-        }
-
-        function visPage5(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-        async function hentData6() {
-            const response = await fetch(endpoint6);
-            console.log(response);
-            const json = await response.json();
-            visPage6(json);
-        }
-
-        function visDetalje6() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData6();
-            visPage6();
-        }
-
-        function visPage6(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-        async function hentData7() {
-            const response = await fetch(endpoint7);
-            console.log(response);
-            const json = await response.json();
-            visPage7(json);
-        }
-
-        function visDetalje7() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData7();
-            visPage7();
-        }
-
-        function visPage7(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-        async function hentData8() {
-            const response = await fetch(endpoint8);
-            console.log(response);
-            const json = await response.json();
-            visPage8(json);
-        }
-
-        function visDetalje8() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData8();
-            visPage8();
-        }
-
-        function visPage8(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
-        }
-
-        async function hentData9() {
-            const response = await fetch(endpoint9);
-            console.log(response);
-            const json = await response.json();
-            visPage9(json);
-        }
-
-        function visDetalje9() {
-            console.log("visDetalje");
-            detalje.classList.remove("skjul");
-            detalje.querySelector("#luk").addEventListener("click", () => {
-                detalje.classList.add("skjul");
-            });
-            hentData9();
-            visPage9();
-        }
-
-        function visPage9(page) {
-            console.log(page);
-            document.querySelector(".rom").innerHTML = page.content.rendered;
+        function visDestinationer() {
+            console.log(destinationer);
+            destinationer.forEach(destination => {
+                const klon = skabelon.cloneNode(true).content;
+                klon.querySelector("h2").textContent = destination.title.rendered;
+                klon.querySelector("img").src = destination.rundt_billede.guid;
+                klon.querySelector(".destination").addEventListener("click", () => {
+                    location.href = `destinationer_detalje.html?id=${destination.id}`;
+                })
+                liste.appendChild(klon);
+            })
         }
 
         function menuOpenClose() {

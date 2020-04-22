@@ -127,6 +127,11 @@ nav a:hover {
     max-width: 70vw;
 }
 
+#videoframe {
+    width: 100%;
+    height: auto;
+}
+
 
 
 /************************* DESTINATIONER *************************/
@@ -164,8 +169,10 @@ nav a:hover {
     margin-left: 5%;
     top: 0;
     width: 90%;
-    background-color: azure;
+    background-color: white;
     z-index: 10000;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 #detalje button {
@@ -455,11 +462,12 @@ nav a:hover {
     }
 
     #detalje {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        /*        top: 0;*/
         width: 80%;
-        margin-left: 10%;
-        background-color: azure;
+        margin: 11vw;
+        background-color: white;
+        overflow: scroll;
     }
 
     #detalje button {
@@ -474,6 +482,7 @@ nav a:hover {
 
     #detalje img {
         width: 45%;
+        margin: 4vw 1vw 4vw 2vw;
     }
 
 
@@ -497,6 +506,13 @@ nav a:hover {
         border-radius: 20%;
     }
 
+    .email {
+        position: absolute;
+        bottom: -146vw;
+        left: 6vw;
+
+    }
+
     .kontakt {
         margin: 2vw 2vw 2vw 2vw;
     }
@@ -511,7 +527,7 @@ nav a:hover {
     }
 
     .map {
-        margin: 2vw 2vw 2vw 2vw;
+        margin: 6vw 2vw 2vw 2vw;
     }
 
     .box3 {
@@ -527,6 +543,8 @@ nav a:hover {
         margin: 2vw 2vw 2vw 2vw;
     }
 
+
+
 }
 
 
@@ -536,9 +554,27 @@ nav a:hover {
     #burger {
         display: none;
     }
+
+    footer h2 {
+        position: absolute;
+        bottom: -138vw;
+    }
+
+    .facebook img {
+        width: 15%;
+        position: absolute;
+        right: 10vw;
+        top: 189vw;
+    }
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 900px) {
+=======
+
+
+@media only screen and (max-width: 1100px) {
+>>>>>>> origin/master
 
     .topnav {
         display: none;
@@ -560,5 +596,10 @@ nav a:hover {
 
     nav {
         height: 15vw;
+    }
+
+    footer h2 {
+        position: absolute;
+        bottom: -153vw;
     }
 }
