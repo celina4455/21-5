@@ -150,8 +150,8 @@
         <div class="box3">
             <div class="facebook">
                 <h2>Følg os</h2>
-                <img src="billeder/fb_billede_bred.png" alt="hej">
-                <img src="billeder/fb_like.png" alt="hej">
+                <img src="billeder/insta.jpg" alt="hej">
+
             </div>
         </div>
     </footer>
@@ -182,7 +182,7 @@
             destinationer.forEach(destination => {
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("h2").textContent = destination.title.rendered;
-                klon.querySelector("img").src = destination.billede.guid;
+                klon.querySelector("img").src = destination.rundt_billede.guid;
                 klon.querySelector(".destination").addEventListener("click", () => {
                     location.href = `destinationer_detalje.html?id=${destination.id}`;
                 })

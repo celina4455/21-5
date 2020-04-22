@@ -162,8 +162,10 @@ nav a:hover {
     margin-left: 5%;
     top: 0;
     width: 90%;
-    background-color: azure;
+    background-color: white;
     z-index: 10000;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 #detalje button {
@@ -445,11 +447,12 @@ nav a:hover {
     }
 
     #detalje {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        /*        top: 0;*/
         width: 80%;
-        margin-left: 10%;
-        background-color: azure;
+        margin: 11vw;
+        background-color: white;
+        overflow: scroll;
     }
 
     #detalje button {
@@ -464,6 +467,7 @@ nav a:hover {
 
     #detalje img {
         width: 45%;
+        margin: 4vw 1vw 4vw 2vw;
     }
 
 
@@ -489,7 +493,7 @@ nav a:hover {
 
     .email {
         position: absolute;
-        bottom: -140vw;
+        bottom: -146vw;
         left: 6vw;
 
     }
@@ -539,14 +543,14 @@ nav a:hover {
 
     footer h2 {
         position: absolute;
-        bottom: -132vw;
+        bottom: -138vw;
     }
 
     .facebook img {
         width: 15%;
         position: absolute;
         right: 10vw;
-        top: 183vw;
+        top: 189vw;
     }
 }
 
