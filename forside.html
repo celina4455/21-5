@@ -153,13 +153,13 @@
     <script>
         window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/8";
+        //        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/8";
 
-        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/18/?per_page=100";
+        const endpoint2 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/173/?per_page=100";
 
-        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/90/?per_page=100";
-
-        const endpoint4 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/92/?per_page=100";
+        //        const endpoint3 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/90/?per_page=100";
+        //
+        //        const endpoint4 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/92/?per_page=100";
 
         var slideIndex = 0;
 
@@ -169,21 +169,21 @@
             document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
 
             showSlides();
-            hentData();
+            //            hentData();
             hentData2();
-            hentData3();
-            hentData4();
+            //            hentData3();
+            //            hentData4();
 
         }
 
-        async function hentData() {
-            const response = await fetch(endpoint);
-            console.log(response);
-            const json = await response.json();
-            visPage(json);
-
-
-        }
+        //        async function hentData() {
+        //            const response = await fetch(endpoint);
+        //            console.log(response);
+        //            const json = await response.json();
+        //            visPage(json);
+        //
+        //
+        //        }
 
         async function hentData2() {
             const response = await fetch(endpoint2);
@@ -193,51 +193,51 @@
 
 
         }
-        async function hentData3() {
-            const response = await fetch(endpoint3);
-            console.log(response);
-            const json = await response.json();
-            visPage3(json);
+        //        async function hentData3() {
+        //            const response = await fetch(endpoint3);
+        //            console.log(response);
+        //            const json = await response.json();
+        //            visPage3(json);
+        //
+        //
+        //        }
+        //
+        //        async function hentData4() {
+        //            const response = await fetch(endpoint4);
+        //            console.log(response);
+        //            const json = await response.json();
+        //            visPage4(json);
+        //
+        //
+        //        }
 
+        //        function visPage(page) {
+        //
+        //            console.log(page);
+        //            document.querySelector(".tekst_forside").innerHTML = page.content.rendered;
+        //
+        //        }
 
-        }
-
-        async function hentData4() {
-            const response = await fetch(endpoint4);
-            console.log(response);
-            const json = await response.json();
-            visPage4(json);
-
-
-        }
-
-        function visPage(page) {
+        function visPage2(page) {
 
             console.log(page);
             document.querySelector(".tekst_forside").innerHTML = page.content.rendered;
 
         }
-
-        function visPage2(page) {
-
-            console.log(page);
-            document.querySelector("#kontakt_pop_tekst").innerHTML = page.content.rendered;
-
-        }
-
-        function visPage3(page) {
-
-            console.log(page);
-            document.querySelector(".video_forside").innerHTML = page.content.rendered;
-
-        }
-
-        function visPage4(page) {
-
-            console.log(page);
-            document.querySelector(".diagram_forside").innerHTML = page.content.rendered;
-
-        }
+        //
+        //        function visPage3(page) {
+        //
+        //            console.log(page);
+        //            document.querySelector(".video_forside").innerHTML = page.content.rendered;
+        //
+        //        }
+        //
+        //        function visPage4(page) {
+        //
+        //            console.log(page);
+        //            document.querySelector(".diagram_forside").innerHTML = page.content.rendered;
+        //
+        //        }
 
         function showSlides() {
             var i;
@@ -274,5 +274,8 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

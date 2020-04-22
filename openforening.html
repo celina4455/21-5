@@ -129,8 +129,8 @@
     <script>
         window.addEventListener("load", sidenVises);
 
-        const endpoint_15family = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/129";
-        const endpoint_21large = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/131";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/193/?per_page=100";
+
 
         function sidenVises() {
             console.log("Siden Vises");
@@ -142,7 +142,7 @@
 
         /************ TEKSTAFSNIT OM DK15 FAMILY ************/
         async function hentData15family() {
-            const response = await fetch(endpoint_15family);
+            const response = await fetch(endpoint);
             console.log(response);
             const json = await response.json();
             visPage15family(json);
@@ -151,21 +151,10 @@
         function visPage15family(page) {
             console.log(page);
             document.querySelector(".DK15").innerHTML = page.content.rendered;
-            hentData21large();
+
         }
 
-        /************ TEKSTAFSNIT OM DK21 LARGE ************/
-        async function hentData21large() {
-            const response = await fetch(endpoint_21large);
-            console.log(response);
-            const json = await response.json();
-            visPage21large(json);
-        }
 
-        function visPage21large(page) {
-            console.log(page);
-            document.querySelector(".DK21").innerHTML = page.content.rendered;
-        }
 
         function menuOpenClose() {
             console.log("menu pressed");
