@@ -487,6 +487,13 @@ nav a:hover {
         border-radius: 20%;
     }
 
+    .email {
+        position: absolute;
+        bottom: -140vw;
+        left: 6vw;
+
+    }
+
     .kontakt {
         margin: 2vw 2vw 2vw 2vw;
     }
@@ -501,7 +508,7 @@ nav a:hover {
     }
 
     .map {
-        margin: 2vw 2vw 2vw 2vw;
+        margin: 6vw 2vw 2vw 2vw;
     }
 
     .box3 {
@@ -517,6 +524,8 @@ nav a:hover {
         margin: 2vw 2vw 2vw 2vw;
     }
 
+
+
 }
 
 
@@ -527,7 +536,21 @@ nav a:hover {
     #burger {
         display: none;
     }
+
+    footer h2 {
+        position: absolute;
+        bottom: -132vw;
+    }
+
+    .facebook img {
+        width: 15%;
+        position: absolute;
+        right: 10vw;
+        top: 183vw;
+    }
 }
+
+
 
 @media only screen and (max-width: 1100px) {
 
@@ -551,5 +574,10 @@ nav a:hover {
 
     nav {
         height: 15vw;
+    }
+
+    footer h2 {
+        position: absolute;
+        bottom: -153vw;
     }
 }
