@@ -398,6 +398,16 @@ nav a:hover {
 
 @media only screen and (min-width: 600px) {
 
+    .topknap {
+        font-family: 'lato';
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        margin-left: 90vw;
+        padding: 8px;
+        background-color: #819987;
+    }
+
     /************************* MENU *************************/
 
     .logo {
