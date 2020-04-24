@@ -101,7 +101,8 @@
     <button id="sprog">DA</button>
 
 
-    <p class="tekst1"></p>
+    <h1 class="title"></h1>
+    <p class="kontakt_tekst"></p>
 
 
 
@@ -149,7 +150,8 @@
         function visPage(page) {
 
             console.log(page);
-            document.querySelector(".tekst1").innerHTML = page.content.rendered;
+            document.querySelector(".title").textContent = page.title.rendered;
+            document.querySelector(".kontakt_tekst").innerHTML = page.content.rendered;
 
         }
 
