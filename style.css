@@ -646,7 +646,7 @@ nav a:hover {
     }
 
     .om_tekst_top {
-        margin-top: 10vw;
+        margin-top: 6vw;
         flex-grow: 1;
         flex-basis: 300px;
         margin-left: 8vw;
@@ -655,7 +655,7 @@ nav a:hover {
     .laila_anders{
         flex-grow: 1;
         flex-basis: 500px;
-        margin-top: 2vw;
+        margin-top: 10vw;
     }
 
     .om_tekst_personlig {
@@ -778,7 +778,7 @@ nav a:hover {
         flex-grow: 1;
         flex-basis: 300px;
         margin-left: 8vw;
-        margin-top: 6vw;
+        margin-top: 4vw;
     }
 
     .kaffe_foto{
