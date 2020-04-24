@@ -101,35 +101,32 @@
 
     </nav>
 
+    <button id="login">Login</button>
+    <button id="sprog">DA</button>
 
 
     <p class="tekst1"></p>
 
-    <footer>
-        <div class="box1">
-            <div class="kontakt">
-                <h2>Kontakt os</h2>
+    <footer id="fod">
+        <div id="fod_container">
+            <div id="fod_info">
+                <p>Rungstedvej 41, 2970 Hørsholm, Danmark <br> Telefon 9-17: 70 26 11 55 <br>
+
+                    Email: info@21-5.dk</p>
             </div>
-        </div>
-        <div class="box2">
-            <div class="map">
-                <h2>Find os</h2>
-                <p>Rungstedvej 41<br>
-                    2970 Hørsholm</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.944347686991!2d12.507049315918723!3d55.88097998058779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465248558cfb6eed%3A0xfb954abdb40256ad!2sRungstedvej%2041%2C%202970%20H%C3%B8rsholm!5e0!3m2!1sda!2sdk!4v1587115731612!5m2!1sda!2sdk" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <img id="fod_logo" src="billeder/logo_hvid.png" alt="logo">
+            <div id="fod_some">
+                <p>Sociale medier: <br>Instagram: @215moments <br> Facebook: 21-5</p>
             </div>
+
         </div>
-        <div class="box3">
-            <div class="facebook">
-                <h2>Følg os</h2>
-            </div>
-        </div>
+
     </footer>
 
     <script>
         window.addEventListener("load", sidenVises);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/35";
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/204";
         var slideIndex = 0;
 
         function sidenVises() {
@@ -169,8 +166,5 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
