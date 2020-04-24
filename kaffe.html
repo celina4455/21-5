@@ -99,6 +99,7 @@
     <button id="login">Login</button>
     <button id="sprog">DA</button>
 
+    <h1 class="title"></h1>
     <p class="tekst1"></p>
 
 
@@ -143,6 +144,7 @@
         function visPage(page) {
 
             console.log(page);
+            document.querySelector(".title").textContent = page.title.rendered;
             document.querySelector(".tekst1").innerHTML = page.content.rendered;
 
         }

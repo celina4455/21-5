@@ -22,6 +22,15 @@ h2 {
     margin-top: 7vw;
 }
 
+h2, h3 {
+    margin-left: 8vw;
+}
+
+h3 {
+    margin-top: 3vw;
+}
+
+
 /************************* BURGERMENU *************************/
 .logo {
     max-width: 23vw;
@@ -472,11 +481,11 @@ nav a:hover {
 
     }
 
-    .wp-image-235 {
+ /*   .wp-image-235 {
         width: 50%;
         height: auto;
         margin-left: 18vw;
-    }
+    }*/
 
 
 
@@ -611,6 +620,43 @@ nav a:hover {
 
 
 
+    /************************ OM SIDE *****************************/
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .aligncenter is-resized {
+        flex-grow: 1;
+        flex-basis: 300px;
+    }
+
+    .om_tekst_top {
+        margin-top: 10vw;
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin-left: 8vw;
+    }
+
+    .laila_anders{
+        flex-grow: 1;
+        flex-basis: 500px;
+        margin-top: 2vw;
+    }
+
+    .om_tekst_personlig {
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin-top: 3vw;
+        margin-left: 8vw;
+    }
+
+
+    /************************ FORENINGER ***************************/
+
+
+
+
 
     /************************* DESTINATIONER *************************/
 
@@ -672,12 +718,32 @@ nav a:hover {
 
 
 
+    /****************** ORIENTRINGSMØDE ********************/
+    .orientering_skrivop {
+        text-align: center;
+    }
+
+
+    /******************* KAFFEMØDE *******************/
+    .tekst1 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .kaffe_tekst {
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin-left: 8vw;
+        margin-top: 6vw;
+    }
+
+    .kaffe_foto{
+        flex-grow: 1;
+        flex-basis: 300px;
+    }
 
 
 
-
-
-}
 
 
 @media only screen and (min-width: 900px) {
