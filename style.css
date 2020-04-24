@@ -719,13 +719,14 @@ nav a:hover {
 
 
     #fod {
+        margin-top: 15vw;
         width: 98vw;
         height: 150px;
         background-color: #819987;
         padding: 2vw;
         display: flex;
         flex-direction: column;
-        position: relative;
+        /*position: relative;*/
     }
 
     #fod_container {
@@ -757,10 +758,6 @@ nav a:hover {
 
 
 @media only screen and (max-width: 900px) {
-
-
-
-
     .topnav {
         display: none;
     }
