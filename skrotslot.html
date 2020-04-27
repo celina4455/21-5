@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om 21-5</title>
+    <title>Fra skrot til slot</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
+
     <nav>
         <a href="forside.html">
             <img class="logo" src="billeder/logo_hvid.png" alt="logo">
         </a>
-<div class="topnav">
+        <div class="topnav">
             <div class="dropdown">
                 <a href="#">Om 21-5</a>
                 <div class="dropdown-content">
@@ -101,10 +101,10 @@
     <button id="login">Login</button>
     <button id="sprog">DA</button>
 
-    <h1 class="title"></h1>
-    <p class="content"></p>
 
-    <a href="#top" class="topknap">Til top</a>
+    <h1 class="title"></h1>
+    <p class="skrot_tekst"></p>
+
 
     <footer id="fod">
         <div id="fod_container">
@@ -122,15 +122,16 @@
 
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", start);
 
-        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/182";
+    <script>
+        window.addEventListener("load", start);
+
+        const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/408";
+
 
         function start() {
-            loadData();
-            document.querySelector("#menuknap").addEventListener("touched", menuOpenClose);
-            document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
+            loadData(); document.querySelector("#menuknap").addEventListener("touched", menuOpenClose); document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
+
         }
 
         async function loadData() {
@@ -140,11 +141,14 @@
             visPage(json);
         }
 
+
+
         function visPage(page) {
             console.log(page);
             document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".content").innerHTML = page.content.rendered;
+            document.querySelector(".skrot_tekst").innerHTML = page.content.rendered;
         }
+
 
         function menuOpenClose() {
             console.log("menu pressed");
@@ -159,5 +163,8 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
