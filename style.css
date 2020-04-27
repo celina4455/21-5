@@ -23,14 +23,14 @@ h2 {
     margin-top: 7vw;
 }
 
-h2, h3 {
-    margin-left: 8vw;
+h2,
+h3 {
+    margin-left: 7vw;
 }
 
 h3 {
     margin-top: 3vw;
 }
-
 
 
 
@@ -200,12 +200,12 @@ nav a:hover {
 }
 
 #detalje {
-    position: fixed;
+    /*    position: fixed;*/
     margin-left: 5%;
     top: 0;
     width: 90%;
     background-color: white;
-/*    z-index: 10;*/
+    /*    z-index: 10;*/
     overflow: scroll;
     scroll-behavior: smooth;
 }
@@ -477,11 +477,6 @@ nav a:hover {
         display: block;
     }
 
-
-
-
-
-
     .bubble {
         max-width: 300px;
     }
@@ -494,7 +489,7 @@ nav a:hover {
 
     }
 
- /*   .wp-image-235 {
+    /*   .wp-image-235 {
         width: 50%;
         height: auto;
         margin-left: 18vw;
@@ -652,7 +647,7 @@ nav a:hover {
         margin-left: 8vw;
     }
 
-    .laila_anders{
+    .laila_anders {
         flex-grow: 1;
         flex-basis: 500px;
         margin-top: 10vw;
@@ -711,10 +706,10 @@ nav a:hover {
     }
 
     #detalje {
-        position: absolute;
+        /*        position: absolute;*/
         /*        top: 0;*/
         width: 80%;
-        margin: 11vw;
+        margin: 0vw 3vw 3vw 6vw;
         background-color: white;
         overflow: scroll;
     }
@@ -723,7 +718,7 @@ nav a:hover {
         font-size: 1.5em;
         padding: 0vw;
         font-family: 'Roboto Condensed', sans-serif;
-        top: 2vw;
+        top: 13vw;
         right: 2vw;
         position: absolute;
         cursor: pointer;
@@ -760,8 +755,6 @@ nav a:hover {
 
 
 
-
-
     /****************** ORIENTRINGSMØDE ********************/
     .orientering_skrivop {
         text-align: center;
@@ -781,7 +774,7 @@ nav a:hover {
         margin-top: 4vw;
     }
 
-    .kaffe_foto{
+    .kaffe_foto {
         flex-grow: 1;
         flex-basis: 300px;
     }
@@ -790,112 +783,112 @@ nav a:hover {
 
 
 
-@media only screen and (min-width: 900px) {
+    @media only screen and (min-width: 900px) {
 
-    #menuknap,
-    #burger {
-        display: none;
+        #menuknap,
+        #burger {
+            display: none;
+        }
+
+
+
+        #login {
+            position: absolute;
+            right: 2vw;
+            top: 0.5vw;
+            border: 0.1vw solid white;
+            cursor: pointer;
+            background-color: #819987;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1rem;
+            padding: 0.5vw 1vw 0.5vw 1vw;
+        }
+
+        #sprog {
+            position: absolute;
+            right: 8vw;
+            top: 0.5vw;
+            border: 0.1vw solid white;
+            cursor: pointer;
+            background-color: #819987;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1rem;
+            padding: 0.5vw 1vw 0.5vw 1vw;
+
+        }
+
+
+
+        #fod {
+            margin-top: 15vw;
+            width: 98vw;
+            height: 150px;
+            background-color: #819987;
+            padding: 2vw;
+            display: flex;
+            flex-direction: column;
+            /*position: relative;*/
+        }
+
+        #fod_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #fod_info p {
+            color: white;
+            margin: 0;
+        }
+
+        #fod_some p {
+            color: white;
+            margin: 0;
+        }
+
+        #fod_logo {
+            max-width: 9vw;
+            z-index: 1000;
+            position: absolute;
+            top: 2vw;
+            left: 45vw;
+
+        }
+
     }
 
 
+    @media only screen and (max-width: 900px) {
+        .topnav {
+            display: none;
+        }
 
-    #login {
-        position: absolute;
-        right: 2vw;
-        top: 0.5vw;
-        border: 0.1vw solid white;
-        cursor: pointer;
-        background-color: #819987;
-        color: white;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-size: 1rem;
-        padding: 0.5vw 1vw 0.5vw 1vw;
-    }
+        .dropdown-content {
+            width: 60vw;
+        }
 
-    #sprog {
-        position: absolute;
-        right: 8vw;
-        top: 0.5vw;
-        border: 0.1vw solid white;
-        cursor: pointer;
-        background-color: #819987;
-        color: white;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-size: 1rem;
-        padding: 0.5vw 1vw 0.5vw 1vw;
+        .logo {
+            max-width: 20vw;
+            cursor: pointer;
+            z-index: 1000;
+            position: absolute;
+            left: 40vw;
+            top: 2vw;
+        }
 
-    }
+        nav {
+            height: 15vw;
+        }
 
+        footer h2 {
+            position: absolute;
+            bottom: -153vw;
+        }
 
-
-    #fod {
-        margin-top: 15vw;
-        width: 98vw;
-        height: 150px;
-        background-color: #819987;
-        padding: 2vw;
-        display: flex;
-        flex-direction: column;
-        /*position: relative;*/
-    }
-
-    #fod_container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #fod_info p {
-        color: white;
-        margin: 0;
-    }
-
-    #fod_some p {
-        color: white;
-        margin: 0;
-    }
-
-    #fod_logo {
-        max-width: 9vw;
-        z-index: 1000;
-        position: absolute;
-        top: 2vw;
-        left: 45vw;
+        #fod_logo {
+            display: none;
+        }
 
     }
-
-}
-
-
-@media only screen and (max-width: 900px) {
-    .topnav {
-        display: none;
-    }
-
-    .dropdown-content {
-        width: 60vw;
-    }
-
-    .logo {
-        max-width: 20vw;
-        cursor: pointer;
-        z-index: 1000;
-        position: absolute;
-        left: 40vw;
-        top: 2vw;
-    }
-
-    nav {
-        height: 15vw;
-    }
-
-    footer h2 {
-        position: absolute;
-        bottom: -153vw;
-    }
-
-    #fod_logo {
-        display: none;
-    }
-
-}

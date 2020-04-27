@@ -15,7 +15,7 @@
         <a href="forside.html">
             <img class="logo" src="billeder/logo_hvid.png" alt="logo">
         </a>
-<div class="topnav">
+        <div class="topnav">
             <div class="dropdown">
                 <a href="#">Om 21-5</a>
                 <div class="dropdown-content">
@@ -103,10 +103,11 @@
     <section id="detalje">
         <button class="luk">Tilbage</button>
         <!--<article id="destination">-->
-            <h2></h2>
-            <p class="text"></p>
-            <img class="img1" src="" alt="">
-            <img class="img2" src="" alt="">
+        <h2></h2>
+        <p class="text"></p>
+        <img class="img1" src="" alt="">
+        <img class="img2" src="" alt="">
+        <p class="text2"></p>
         <!--</article>-->
     </section>
 
@@ -147,6 +148,7 @@
             document.querySelector(".text").innerHTML = destinationer.content.rendered;
             document.querySelector(".img1").src = destinationer.billede1.guid;
             document.querySelector(".img2").src = destinationer.billede2.guid;
+            document.querySelector(".text2").innerHTML = destinationer.tekst2;
 
             //            document.querySelector("img").src = destinationer.billede.guid;
         }
