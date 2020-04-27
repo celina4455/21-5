@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,8 +106,6 @@
     <p class="skrot_tekst"></p>
 
 
-
-
     <footer id="fod">
         <div id="fod_container">
             <div id="fod_info">
@@ -129,8 +128,10 @@
 
         const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/408";
 
+
         function start() {
             loadData(); document.querySelector("#menuknap").addEventListener("touched", menuOpenClose); document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
+
         }
 
         async function loadData() {
@@ -140,13 +141,13 @@
             visPage(json);
         }
 
+
+
         function visPage(page) {
             console.log(page);
             document.querySelector(".title").textContent = page.title.rendered;
             document.querySelector(".skrot_tekst").innerHTML = page.content.rendered;
         }
-
-
 
 
         function menuOpenClose() {
@@ -162,5 +163,8 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
