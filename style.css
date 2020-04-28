@@ -193,6 +193,12 @@ nav a:hover {
     height: auto;
 }
 
+/********************* ØKONOMI, JURA OG SKAT *******************/
+
+.jura_diagram {
+    width: 80vw;
+}
+
 /********************* JOB I 21-5 **********************/
 
 .job_billede {
@@ -691,34 +697,41 @@ nav a:hover {
 
 
     /************************ OM SIDE *****************************/
+
+    #om_konceptet h1 {
+        text-align: left;
+        margin-left: 12vw;
+    }
+
     .content {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .aligncenter is-resized {
+    .illustration_boligsystem {
         flex-grow: 1;
         flex-basis: 300px;
+        margin-top: -3vw;
     }
 
     .om_tekst_top {
-        margin-top: 6vw;
+        margin-top: 3vw;
         flex-grow: 1;
-        flex-basis: 300px;
-        margin-left: 8vw;
+        flex-basis: 500px;
+        margin-left: 4.5vw;
     }
 
     .laila_anders {
         flex-grow: 1;
         flex-basis: 500px;
-        margin-top: 10vw;
+        margin-top: 2vw;
     }
 
     .om_tekst_personlig {
         flex-grow: 1;
         flex-basis: 300px;
         margin-top: 3vw;
-        margin-left: 8vw;
+        margin-left: 4.5vw;
     }
 
     /************************ JOB I 21-5 ************************/
@@ -729,33 +742,42 @@ nav a:hover {
 
     /************************ ØKONOMI, JURA OG SKATTEBASSER *************************/
 
-    .jurapunkt {
-        margin-left: 10vw;
+    .jurapunkt, .investkort_punkt, .finans_punkt {
+        margin-left: 5vw;
     }
 
     .jura_content h2 {
         text-align: left;
     }
 
-    .jura_diagram {
+    /*.jura_diagram {
         width: 100%;
         margin: 0 25vw 0 25vw;
+    }*/
+
+    #okojuraskat .title {
+        margin-left: 40vw;
     }
 
-    /*    .jura_content {
+    #okojuraskat {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .jura_diagram_tekst {
+    .okonomi, .jura {
         flex-grow: 1;
-        flex-basis: 300px;
+        flex-basis: 500px;
     }
 
-    .jura_diagram {
+    .skat, .investering {
         flex-grow: 1;
-        flex-basis: 300px;
-    }*/
+        flex-basis: 500px;
+    }
+
+    .investkort, .investlang {
+        flex-grow: 1;
+        flex-basis: 500px;
+    }
 
 
     /************************ FORENINGER ***************************/

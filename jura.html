@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Økonomi, jura og skat</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Prosto+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 
@@ -16,7 +34,7 @@
         <a href="forside.html">
             <img class="logo" src="billeder/logo_hvid.png" alt="logo">
         </a>
- <div class="topnav">
+        <div class="topnav">
             <div class="dropdown">
                 <a href="#">Om 21-5</a>
                 <div class="dropdown-content">
@@ -101,8 +119,47 @@
     <button id="login">Login</button>
     <button id="sprog">DA</button>
 
-    <h1 class="title"></h1>
-    <p class="jura_content"></p>
+    <div id="okojuraskat">
+
+        <h1 class="title"></h1>
+        <p class="beskrivelse"></p>
+
+        <div class="okonomi">
+            <h1 class="okonomi_title"></h1>
+            <p class="okonomi_tekst"></p>
+        </div>
+
+        <div class="jura">
+            <h1 class="jura_title"></h1>
+            <p class="jura_tekst"></p>
+        </div>
+
+        <div class="skat">
+            <h1 class="skat_title"></h1>
+            <p class="skat_tekst"></p>
+        </div>
+
+        <div class="investering">
+            <h1 class="investering_title"></h1>
+            <p class="investering_tekst"></p>
+        </div>
+
+        <div class="investkort">
+            <h1 class="investeringkort_title"></h1>
+            <p class="investeringkort_tekst"></p>
+        </div>
+
+        <div class="investlang">
+            <h1 class="investeringlang_title"></h1>
+            <p class="investeringlang_tekst"></p>
+        </div>
+
+        <div class="finans">
+            <h1 class="finans_title"></h1>
+            <p class="finans_tekst"></p>
+        </div>
+
+    </div>
 
     <a href="#top" class="topknap">Til top</a>
 
@@ -127,14 +184,21 @@
         document.addEventListener("DOMContentLoaded", start);
 
         const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/168";
+        const okonomi = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/433"
+        const jura = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/435"
+        const skat = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/437"
+        const investering = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/439"
+        const investeringkort = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/441"
+        const investeringlang = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/443"
+        const finansiering = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/445"
 
         function start() {
-            loadData();
+            loadfirst();
             document.querySelector("#menuknap").addEventListener("touched", menuOpenClose);
             document.querySelector("#menuknap").addEventListener("click", menuOpenClose);
         }
 
-        async function loadData() {
+        async function loadfirst() {
             const response = await fetch(endpoint);
             console.log(response);
             const json = await response.json();
@@ -144,8 +208,131 @@
         function visPage(page) {
             console.log(page);
             document.querySelector(".title").textContent = page.title.rendered;
-            document.querySelector(".jura_content").innerHTML = page.content.rendered;
+            document.querySelector(".beskrivelse").innerHTML = page.content.rendered;
+            loadOkonomi();
         }
+
+
+
+        /** ØKONOMI DEL **/
+        async function loadOkonomi() {
+            const response = await fetch(okonomi);
+            console.log(response);
+            const json = await response.json();
+            visokonomi(json);
+        }
+
+        function visokonomi(posts) {
+            console.log(posts);
+            document.querySelector(".okonomi_title").textContent = posts.title.rendered;
+            document.querySelector(".okonomi_tekst").innerHTML = posts.content.rendered;
+            loadJura();
+        }
+
+
+
+        /** JURA **/
+        async function loadJura() {
+            const response = await fetch(jura);
+            console.log(response);
+            const json = await response.json();
+            visJura(json);
+        }
+
+        function visJura(posts) {
+            console.log(posts);
+            document.querySelector(".jura_title").textContent = posts.title.rendered;
+            document.querySelector(".jura_tekst").innerHTML = posts.content.rendered;
+            loadSkat();
+        }
+
+
+
+
+        /** SKAT **/
+        async function loadSkat() {
+            const response = await fetch(skat);
+            console.log(response);
+            const json = await response.json();
+            visSkat(json);
+        }
+
+        function visSkat(posts) {
+            console.log(posts);
+            document.querySelector(".skat_title").textContent = posts.title.rendered;
+            document.querySelector(".skat_tekst").innerHTML = posts.content.rendered;
+            loadInvestering();
+        }
+
+
+
+        /** INVESTERING **/
+        async function loadInvestering() {
+            const response = await fetch(investering);
+            console.log(response);
+            const json = await response.json();
+            visInvestering(json);
+        }
+
+        function visInvestering(posts) {
+            console.log(posts);
+            document.querySelector(".investering_title").textContent = posts.title.rendered;
+            document.querySelector(".investering_tekst").innerHTML = posts.content.rendered;
+            loadInvesteringKort();
+        }
+
+
+
+        /** INVESTERING PÅ KORT SIGT **/
+        async function loadInvesteringKort() {
+            const response = await fetch(investeringkort);
+            console.log(response);
+            const json = await response.json();
+            visInvesteringKort(json);
+        }
+
+        function visInvesteringKort(posts) {
+            console.log(posts);
+            document.querySelector(".investeringkort_title").textContent = posts.title.rendered;
+            document.querySelector(".investeringkort_tekst").innerHTML = posts.content.rendered;
+            loadInvesteringLang();
+        }
+
+
+
+        /** INVESTERING PÅ LANG SIGT **/
+        async function loadInvesteringLang() {
+            const response = await fetch(investeringlang);
+            console.log(response);
+            const json = await response.json();
+            visInvesteringLang(json);
+        }
+
+        function visInvesteringLang(posts) {
+            console.log(posts);
+            document.querySelector(".investeringlang_title").textContent = posts.title.rendered;
+            document.querySelector(".investeringlang_tekst").innerHTML = posts.content.rendered;
+            loadFinansiering();
+        }
+
+
+
+        /** FINANSIERING **/
+        async function loadFinansiering() {
+            const response = await fetch(finansiering);
+            console.log(response);
+            const json = await response.json();
+            visFinansiering(json);
+        }
+
+        function visFinansiering(posts) {
+            console.log(posts);
+            document.querySelector(".finans_title").textContent = posts.title.rendered;
+            document.querySelector(".finans_tekst").innerHTML = posts.content.rendered;
+        }
+
+
+
 
         function menuOpenClose() {
             console.log("menu pressed");
