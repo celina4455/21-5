@@ -121,7 +121,7 @@
     <section id="detalje">
         <button class="luk">Tilbage til destinationsoversigt</button>
         <!--<article id="destination">-->
-        <h2></h2>
+        <h1></h1>
         <p class="text"></p>
         <img class="img1" src="" alt="">
         <img class="img2" src="" alt="">
@@ -166,7 +166,7 @@
         }
         //vis data om retten
         function visDestinationer() {
-            document.querySelector("h2").textContent = destinationer.title.rendered;
+            document.querySelector("h1").textContent = destinationer.title.rendered;
             document.querySelector(".text").innerHTML = destinationer.content.rendered;
             document.querySelector(".img1").src = destinationer.billede1.guid;
             document.querySelector(".img2").src = destinationer.billede2.guid;

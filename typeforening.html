@@ -120,14 +120,16 @@
     <div class="big_title"></div>
 
 
+    <h2 class="family_h2"></h2>
     <p class="tekst_family"></p>
-    <div class="formular_family"></div>
 
+
+    <h2 class="large_h2"></h2>
     <p class="tekst_large"></p>
-    <div class="formular_large"></div>
 
+
+    <h2 class="grande_h2"></h2>
     <p class="tekst_grande"></p>
-    <div class="formular_grande"></div>
 
     <a href="#top" class="topknap">Til top</a>
 
@@ -151,6 +153,9 @@
         window.addEventListener("load", sidenVises);
 
         const endpoint1 = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/191/?per_page=100";
+        const family ="http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/476"
+        const large ="http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/479"
+        const grande ="http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/483"
 
 
         function sidenVises() {
@@ -170,8 +175,58 @@
 
         function visPage1(page) {
             console.log(page);
-            document.querySelector(".tekst_family").innerHTML = page.content.rendered;
+            document.querySelector(".big_title").innerHTML = page.content.rendered;
+            hentFamily();
+        }
 
+
+
+/** FAMILY **/
+        async function hentFamily() {
+            const response = await fetch(family);
+            console.log(response);
+            const json = await response.json();
+            visFamily(json);
+        }
+
+        function visFamily(posts) {
+            console.log(posts);
+            document.querySelector(".family_h2").textContent = posts.title.rendered;
+            document.querySelector(".tekst_family").innerHTML = posts.content.rendered;
+            hentLarge();
+        }
+
+
+
+/** LARGE **/
+        async function hentLarge() {
+            const response = await fetch(large);
+            console.log(response);
+            const json = await response.json();
+            visLarge(json);
+        }
+
+        function visLarge(posts) {
+            console.log(posts);
+            document.querySelector(".large_h2").textContent = posts.title.rendered;
+            document.querySelector(".tekst_large").innerHTML = posts.content.rendered;
+            hentGrande();
+        }
+
+
+
+/** GRANDE **/
+        async function hentGrande() {
+            const response = await fetch(grande);
+            console.log(response);
+            const json = await response.json();
+            visGrande(json);
+        }
+
+        function visGrande(posts) {
+            console.log(posts);
+            document.querySelector(".grande_h2").textContent = posts.title.rendered;
+            document.querySelector(".tekst_grande").innerHTML = posts.content.rendered;
         }
 
 

@@ -15,18 +15,23 @@ p {
     color: #363636;
 }
 
-h1,
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 5vw;
+}
+
 h2,
 h4 {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2rem;
-    text-align: center;
-    margin-top: 7vw;
+    margin-top: 5vw;
 }
 
 h2,
 h3 {
-    margin-left: 7vw;
+    margin-left: 4vw;
 }
 
 h3 {
@@ -41,6 +46,12 @@ h3 {
     margin-left: 80vw;
     padding: 8px;
     background-color: #819987;
+}
+
+.topknap:hover {
+        background-color: white;
+        border: 1px solid #819987;
+        color: #819987;
 }
 
 
@@ -394,6 +405,12 @@ nav a:hover {
     background-color: white;
 }
 
+#detalje button:hover {
+        background-color: white;
+        border: 1px solid #819987;
+        color: #819987;
+}
+
 #detalje img {
     width: 100%;
     margin-top: 5vw;
@@ -738,7 +755,7 @@ nav a:hover {
 
     .illustration_boligsystem {
         flex-grow: 1;
-        flex-basis: 300px;
+        flex-basis: 200px;
         margin-top: -3vw;
     }
 
@@ -749,10 +766,41 @@ nav a:hover {
         margin-left: 4.5vw;
     }
 
+    .omkonceptet_tekst1 {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-right: 4.5vw;
+        margin-left: 2vw
+    }
+
+    .omkonceptet_tekst2 {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-left: 4.5vw;
+        margin-right: 2vw;
+    }
+
+    .bagomtekst1 {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-right: 2vw;
+        margin-left: 4.5vw;
+        margin-top: 5vw;
+    }
+
+    .bagomtekst2 {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-left: 2vw;
+        margin-right: 4.5vw;
+        margin-top: 5vw;
+    }
+
     .laila_anders {
         flex-grow: 1;
         flex-basis: 500px;
         margin-top: 2vw;
+        margin-left: 0;
     }
 
     .om_tekst_personlig {
@@ -760,6 +808,10 @@ nav a:hover {
         flex-basis: 300px;
         margin-top: 3vw;
         margin-left: 4.5vw;
+    }
+
+    .leder {
+        margin-top: 5vw;
     }
 
     /************************ JOB I 21-5 ************************/
@@ -825,6 +877,147 @@ nav a:hover {
         margin-left: 5vw;
     }
 
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .foreningstypetekst {
+        flex-grow: 1;
+        flex-basis: 500px;
+        margin-top: 4vw;
+        margin-left: 5vw;
+    }
+
+    .foreningstypefoto {
+        flex-grow: 1;
+        flex-basis: 20px;
+    }
+
+
+    .knaptilmeet {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.3rem;
+        padding: 8px;
+        background-color: #819987;
+    }
+
+    .knaptilmeet a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .knaptilmeet:hover {
+        background-color: white;
+        border: 1px solid #819987;
+        color: #819987;
+    }
+
+    .knaptilmeet a:hover {
+        color: #819987;
+    }
+
+    .orienteringpage {
+        position: absolute;
+        margin-left: 22vw;
+        width: 14vw;
+    }
+
+    .kaffepage {
+        position: absolute;
+        margin-left: 10vw;
+        width: 10vw;
+    }
+
+
+
+
+    /************************ 3 TYPER FORENINGER *********************/
+
+    /** FAMILY **/
+    .family_h2 {
+        text-align: left;
+    }
+
+    .tekst_family {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .family_tekst {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-top: 3vw;
+    }
+
+    .wp-image-339 {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    /** LARGE **/
+    .large_h2 {
+        text-align: left;
+    }
+
+    .tekst_large {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .large_tekst {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-top: 3vw;
+    }
+
+    .wp-image-340 {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    /** GRANDE **/
+    .grande_h2 {
+        text-align: left;
+    }
+
+    .tekst_grande {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .grande_tekst {
+        flex-grow: 1;
+        flex-basis: 400px;
+        margin-top: 3vw;
+    }
+
+    .wp-image-341 {
+        margin-top: 5vw;
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+
+
+    /************************* ÅBNE FORENINGER *************************/
+
+    .openforeninger {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .DK15 {
+        flex-grow: 1;
+        flex-basis: 400px;
+
+    }
+
+    .DK21 {
+        flex-grow: 1;
+        flex-basis: 400px;
+
+    }
 
 
 

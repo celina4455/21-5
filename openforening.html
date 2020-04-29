@@ -33,7 +33,7 @@
         <a href="forside.html">
             <img class="logo" src="billeder/logo_hvid.png" alt="logo">
         </a>
-<div class="topnav">
+        <div class="topnav">
             <div class="dropdown">
                 <a href="#">Om 21-5</a>
                 <div class="dropdown-content">
@@ -118,9 +118,21 @@
     <button id="login">Login</button>
     <button id="sprog">DA</button>
 
-<h1>Åbne foreninger</h1>
-    <p class="DK21"></p>
-    <p class="DK15"></p>
+    <h1 class="gensalg"></h1>
+
+    <div class="openforeninger">
+
+    <div class="DK15">
+        <h2 class="DK15_title"></h2>
+        <p class="DK15_tekst"></p>
+    </div>
+
+    <div class="DK21">
+        <h2 class="DK21_title"></h2>
+        <p class="DK21_tekst"></p>
+    </div>
+
+    </div>
 
     <a href="#top" class="topknap">Til top</a>
 
@@ -144,6 +156,8 @@
         window.addEventListener("load", sidenVises);
 
         const endpoint = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/pages/193/?per_page=100";
+        const gensalgfamily = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/506"
+        const gensalglarge = "http://celinamadsen.dk/kea/09/21_5/wordpress//wp-json/wp/v2/posts/503"
 
 
         function sidenVises() {
@@ -154,7 +168,7 @@
             hentData15family();
         }
 
-        /************ TEKSTAFSNIT OM DK15 FAMILY ************/
+
         async function hentData15family() {
             const response = await fetch(endpoint);
             console.log(response);
@@ -164,8 +178,42 @@
 
         function visPage15family(page) {
             console.log(page);
-            document.querySelector(".DK15").innerHTML = page.content.rendered;
+            document.querySelector(".gensalg").innerHTML = page.title.rendered;
+            hentFamily();
+        }
 
+
+
+        /** FAMILY **/
+        async function hentFamily() {
+            const response = await fetch(gensalgfamily);
+            console.log(response);
+            const json = await response.json();
+            visFamily(json);
+        }
+
+        function visFamily(posts) {
+            console.log(posts);
+            document.querySelector(".DK15_title").textContent = posts.title.rendered;
+            document.querySelector(".DK15_tekst").innerHTML = posts.content.rendered;
+            hentLarge();
+        }
+
+
+
+        /** LARGE **/
+        async function hentLarge() {
+            const response = await fetch(gensalglarge);
+            console.log(response);
+            const json = await response.json();
+            visLarge(json);
+        }
+
+        function visLarge(posts) {
+            console.log(posts);
+            document.querySelector(".DK21_title").textContent = posts.title.rendered;
+            document.querySelector(".DK21_tekst").innerHTML = posts.content.rendered;
+            hentGrande();
         }
 
 

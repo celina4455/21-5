@@ -120,6 +120,7 @@
     <button id="sprog">DA</button>
 
 
+    <h1 class="orientering_h1"></h1>
     <p class="tekst1"></p>
 
     <a href="#top" class="topknap">Til top</a>
@@ -166,6 +167,7 @@
         function visPage(page) {
 
             console.log(page);
+            document.querySelector(".orientering_h1").innerHTML = page.title.rendered;
             document.querySelector(".tekst1").innerHTML = page.content.rendered;
 
         }
