@@ -54,6 +54,15 @@ h3 {
     color: #819987;
 }
 
+figure image {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /************************* BURGERMENU *************************/
 .logo {
